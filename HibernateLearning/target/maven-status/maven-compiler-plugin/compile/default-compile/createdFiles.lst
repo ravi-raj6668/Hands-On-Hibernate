@@ -1,0 +1,13 @@
+com\innodev\hibernate\entity\Student.class
+test\Pgm1.class
+com\innodev\hibernate\operation\FetchOperation.class
+com\innodev\hibermapping\entity\Question.class
+com\innodev\hibernate\config\HibernateProgrammaticConfig.class
+test\OnlyTest.class
+com\innodev\hibernate\App.class
+com\innodev\hibernate\Student.class
+com\innodev\hibermapping\entity\Answer.class
+com\innodev\hibernate\entity\Address.class
+com\innodev\hibermapping\operation\OneToOneMapping.class
+com\innodev\hibernate\entity\Certificate.class
+com\innodev\hibernate\operation\EmbeddableOperation.class
