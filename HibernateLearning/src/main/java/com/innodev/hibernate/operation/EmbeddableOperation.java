@@ -14,7 +14,7 @@ public class EmbeddableOperation {
 
 	public static void main(String[] args) {
 		Configuration cfg = new Configuration();
-		cfg.configure("hibernate.cfg.xml");
+		cfg.configure("src/main/java/hibernate.cfg.xml");
 		SessionFactory sessionFactory = cfg.buildSessionFactory();
 
 		Student student1 = new Student();

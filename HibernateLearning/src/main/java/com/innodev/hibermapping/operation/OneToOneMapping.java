@@ -2,6 +2,8 @@ package com.innodev.hibermapping.operation;
 
 import com.innodev.hibermapping.entity.Answer;
 import com.innodev.hibermapping.entity.Question;
+import com.innodev.util.HibernateSessionFactory;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -9,19 +11,21 @@ import org.hibernate.cfg.Configuration;
 
 public class OneToOneMapping {
     public static void main(String[] args) {
-        Configuration cfg = new Configuration();
-        cfg.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
-        cfg.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
-        cfg.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5432/test_db");
-        cfg.setProperty("hibernate.connection.username", "postgres");
-        cfg.setProperty("hibernate.connection.password", "root");
-        cfg.setProperty("hibernate.hbm2ddl.auto", "create");
-        cfg.setProperty("hibernate.show_sql", "true");
-        cfg.setProperty("hibernate.format_sql", "true");
-        cfg.addAnnotatedClass(Question.class);
-        cfg.addAnnotatedClass(Answer.class);
+//        Configuration cfg = new Configuration();
+//        cfg.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+//        cfg.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
+//        cfg.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5432/test_db");
+//        cfg.setProperty("hibernate.connection.username", "postgres");
+//        cfg.setProperty("hibernate.connection.password", "root");
+//        cfg.setProperty("hibernate.hbm2ddl.auto", "create");
+//        cfg.setProperty("hibernate.show_sql", "true");
+//        cfg.setProperty("hibernate.format_sql", "true");
+//        cfg.addAnnotatedClass(Question.class);
+//        cfg.addAnnotatedClass(Answer.class);
 
-        SessionFactory sessionFactory = cfg.buildSessionFactory();
+//        SessionFactory sessionFactory = cfg.buildSessionFactory();
+
+        SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();
 
         //creating question
         Question question1 = new Question();
