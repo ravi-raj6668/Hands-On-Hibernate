@@ -45,12 +45,12 @@ public class HibernateProgrammaticConfig {
 
 			// Retrieve a student by ID
 			Student student1 = (Student) session.load(Student.class, 1);
-			logger.info("Getting student data : ", student1);
+			logger.info("Getting student data {} : ", student1);
 			System.out.println("Getting student data : " + student1);
 			System.out.println(student1);
 			System.out.println("Retrieved Student: " + student1.getName());
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info("Getting error while fetching and saving data to database : ", e);
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();

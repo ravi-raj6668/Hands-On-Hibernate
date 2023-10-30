@@ -9,10 +9,8 @@ public class HibernateSessionFactory {
     private static SessionFactory buildSessionFactory() {
         try {
             return HibernateUtil.getConfiguration().buildSessionFactory(
-                    new StandardServiceRegistryBuilder().applySettings(HibernateUtil.getConfiguration().getProperties()).build()
-            );
+                    new StandardServiceRegistryBuilder().applySettings(HibernateUtil.getConfiguration().getProperties()).build());
         } catch (Exception e) {
-            e.printStackTrace();
             throw new ExceptionInInitializerError(e);
         }
     }

@@ -10,6 +10,9 @@ public class Answer {
     private int answerId;
     private String answer;
 
+    @OneToOne(mappedBy = "answer")
+    private Question question;
+
     public Answer() {
     }
 
@@ -32,6 +35,14 @@ public class Answer {
 
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
     }
 
     @Override

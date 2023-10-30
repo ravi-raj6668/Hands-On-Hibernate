@@ -3,11 +3,9 @@ package com.innodev.hibermapping.operation;
 import com.innodev.hibermapping.entity.Answer;
 import com.innodev.hibermapping.entity.Question;
 import com.innodev.util.HibernateSessionFactory;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 
 public class OneToOneMapping {
     public static void main(String[] args) {
@@ -56,6 +54,10 @@ public class OneToOneMapping {
         session.save(answer2);
 
         transaction.commit();
+
+        //fething data....
+        Question newQues = session.load(Question.class, 1);
+        System.out.println(newQues);
         session.close();
         sessionFactory.close();
     }

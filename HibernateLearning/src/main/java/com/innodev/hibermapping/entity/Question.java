@@ -10,7 +10,7 @@ public class Question {
     private int questionId;
     private String question;
     @OneToOne
-    @JoinColumn(name = "a_id")
+    @JoinColumn(name = "ans_id")
     private Answer answer;
 
     public Question() {
