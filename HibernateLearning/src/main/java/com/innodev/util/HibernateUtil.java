@@ -1,6 +1,7 @@
 package com.innodev.util;
 
 import com.innodev.hibermapping.entity.*;
+import com.innodev.hibernate.entity.Student;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
@@ -9,7 +10,8 @@ public class HibernateUtil {
     static {
         try{
             configuration = new Configuration();
-            configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+            configuration.setProperty("hibernate.dialect", "com.innodev.util.CustomPostgreSqlDialect");
+//            configuration.setProperty("spring.jpa.properties.hibernate.dialect", "org.hibernate.dialect.PostgreSQL9Dialect");
             configuration.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
             configuration.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5432/test_db");
             configuration.setProperty("hibernate.connection.username", "postgres");
@@ -21,6 +23,7 @@ public class HibernateUtil {
 
 
             //adding entity mappings
+            configuration.addAnnotatedClass(Student.class);
             configuration.addAnnotatedClass(Answer.class);
             configuration.addAnnotatedClass(Question.class);
             configuration.addAnnotatedClass(AnswerOM_MO.class);

@@ -2,6 +2,7 @@ package com.innodev.hibernate.operation;
 
 import java.util.UUID;
 
+import com.innodev.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -13,9 +14,7 @@ import com.innodev.hibernate.entity.Student;
 public class EmbeddableOperation {
 
 	public static void main(String[] args) {
-		Configuration cfg = new Configuration();
-		cfg.configure("src/main/java/hibernate.cfg.xml");
-		SessionFactory sessionFactory = cfg.buildSessionFactory();
+		SessionFactory sessionFactory = HibernateUtil.getConfiguration().buildSessionFactory();
 
 		Student student1 = new Student();
 		student1.setName("Java_Developer");

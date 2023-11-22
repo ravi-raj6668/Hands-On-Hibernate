@@ -1,11 +1,14 @@
 package com.innodev.hibernate.entity;
 
+import org.hibernate.annotations.Type;
+
 import java.util.UUID;
 
 import javax.persistence.Embeddable;
 
 @Embeddable
 public class Certificate {
+	@Type(type="pg-uuid")
 	private UUID certificateId;
 	private String course;
 	private String duration;
