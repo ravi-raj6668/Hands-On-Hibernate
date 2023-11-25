@@ -16,7 +16,7 @@ public class QuestionOM_MO implements Serializable {
     private int questionId;
     private String question;
 
-    @OneToMany(mappedBy = "question", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "question", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<AnswerOM_MO> answer;
 
     public QuestionOM_MO() {

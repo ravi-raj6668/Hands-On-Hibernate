@@ -10,8 +10,8 @@ public class HibernateUtil {
     static {
         try{
             configuration = new Configuration();
-            configuration.setProperty("hibernate.dialect", "com.innodev.util.CustomPostgreSqlDialect");
-//            configuration.setProperty("spring.jpa.properties.hibernate.dialect", "org.hibernate.dialect.PostgreSQL9Dialect");
+            //configuration.setProperty("hibernate.dialect", "com.innodev.util.CustomPostgreSqlDialect");
+            configuration.setProperty("spring.jpa.properties.hibernate.dialect", "org.hibernate.dialect.PostgreSQL9Dialect");
             configuration.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
             configuration.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5432/test_db");
             configuration.setProperty("hibernate.connection.username", "postgres");
@@ -19,7 +19,8 @@ public class HibernateUtil {
             configuration.setProperty("hibernate.hbm2ddl.auto", "update");
             configuration.setProperty("hibernate.show_sql", "true");
             configuration.setProperty("hibernate.format_sql", "true");
-
+            configuration.setProperty("hibernate.cache.use_second_level_cache", "true");
+            configuration.setProperty("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.internal.EhcacheRegionFactory");
 
 
             //adding entity mappings

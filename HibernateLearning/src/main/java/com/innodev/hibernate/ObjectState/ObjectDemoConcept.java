@@ -38,7 +38,7 @@ public class ObjectDemoConcept {
         session.save(student);
         session.save(student1);
 
-        //student.setName("Java World");//persistent State
+        student.setName("Java World");//persistent State
         transaction.commit();
         session.close();
         sessionFactory.close();
